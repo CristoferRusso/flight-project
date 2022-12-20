@@ -4,7 +4,7 @@ require 'functions.php';
 
 session_start();
 
-$email = $_POST['email'];
+
 $errors = '';
 if (empty($_POST['email'])) {
     $errors .= 'Email is required <br>';
@@ -16,7 +16,7 @@ if (empty($_POST['password'])) {
 }
 
 
-$sql = "SELECT email,password FROM users WHERE email =?";
+$sql = "SELECT email,password,name,surname FROM users WHERE email =?";
 $stm = $link->prepare($sql);
 $stm->bind_param('s', ($_POST['email']));
 $res = $stm->execute();
@@ -32,7 +32,11 @@ if ($res && $result->num_rows) {
     if (password_verify($_POST['password'], $row['password'])) {
         $_SESSION['messageLogin'] = 'You are logged in ';
         header('Location: login.php');
-        $_SESSION['user_email'] = $email;
+        $_SESSION['user_email'] = $_POST['email'];
+        $_SESSION['name'] = $row['name'];
+        $_SESSION['surname'] = $row['surname'];
+        
+      
     } else {
 
         $_SESSION['errors'] = 'Wrong email or password';

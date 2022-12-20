@@ -17,11 +17,12 @@ require 'header.php';
   <?php 
   if (isUserLoggedIn()) { ?>
     <div class="card">
-      <h5 class="card-header">Delete account</h5>
+      <h5 class="card-header">Your account</h5>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <h5 class="card-title"><?php  print_r($users->get_name()) ?><br><?php print_r($users->get_surname()) ?></h5>
+        <p class="card-text"><?php print_r($users->get_email()) ?></p>
         <button class="btn btn-primary" type="submit" id="btndelete">Delete</button>
+        <a class="btn btn-primary" type="submit" id="btndelete" href="newEmail.php">Change your email</a>
       </div>
     </div>
 </form>

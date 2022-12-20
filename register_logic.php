@@ -3,9 +3,7 @@
 session_start();
 require 'db.php';
 
-$name ='ciao';
 $errors = '';
-$_POST['name'] = $name;
 $_SESSION['user_email'] = '';
 if(empty($_POST['email'])) {
 
@@ -32,9 +30,9 @@ if (strlen($_POST['password']) <6) {
 
 
 
-//REGISTRAZIONE UTENTE//
+//Controlla che l'email non è già presente nel server//
 $sql = "SELECT email FROM users WHERE email =?";
-//La funzione prepare prepara la query nella variabile $stm
+//La funzione prepare la query nella variabile $stm
 $stm = $link->prepare($sql);
 //In questo modo stiamo dicendo che il parametro che andremo a mettere nella query(?) è di tipo stringa e che il valore che voglia far passare è email
 $stm->bind_param('s',($_POST['email']));
@@ -57,22 +55,24 @@ if(!empty($errors)) {
 } 
 
 
-//REGISTRAZIONE PASSWORD//
+//REGISTRAZIONE utente//
 
-$sql = "INSERT INTO users (email,password,name) VALUES(?,?,?)";
+$sql = "INSERT INTO users (email,password,name,surname) VALUES(?,?,?,?)";
 $stm = $link->prepare($sql);
 
 //Codifica la password inserita dall'utente
 $passHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-//Due stringhe(ss)
-$stm->bind_param('sss', $_POST['email'], $passHash, $_POST['name']);
+
+$stm->bind_param('ssss', $_POST['email'], $passHash, $_POST['name'], $_POST['surname']);
 
 $res = $stm->execute();
 
 if($res && $stm->affected_rows) {
     header('Location: index.php');
-    $_SESSION['messageRegistration'] = 'User registered correctly <br> You can now access your platform' ;
+    $_SESSION['messageRegistration'] = '<br> You can now access your platform <br>' ;
     $_SESSION['user_email'] = $_POST['email'];
+    $_SESSION['name'] = $_POST['name'];
+    $_SESSION['surname'] = $_POST['surname'];
     $_SESSION['message'] = 'You are logged in with';
 } 
     //VERIFICA UTENTE LOGGATO//
@@ -81,6 +81,7 @@ if($res && $stm->affected_rows) {
     header('Location: register.php');
     
    
+    
 
 
 

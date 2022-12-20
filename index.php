@@ -16,7 +16,7 @@ require 'getAirport.php';
       
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img width="100%" height="100%" src="images//alexey-starki-91ykdj2WQeg-unsplash (1).jpg"></img>
+          <img class='img-fluid'width="100%" height="100%" src="images//alexey-starki-91ykdj2WQeg-unsplash (1).jpg"></img>
 
           <div class="container">
             <div class="carousel-caption text-start">
@@ -28,7 +28,7 @@ require 'getAirport.php';
         </div>
 
         <div class="carousel-item">
-          <img width="100%" height="100%" src="images//alexey-starki-91ykdj2WQeg-unsplash (1).jpg"></img>
+          <img  class='img-fluid'width="100%" height="100%" src="images//alexey-starki-91ykdj2WQeg-unsplash (1).jpg"></img>
           <div class="container">
             <div class="carousel-caption">
               <h1>Another example headline.</h1>
@@ -39,8 +39,8 @@ require 'getAirport.php';
         </div>
 
         <div class="carousel-item">
-          <img class="bd-placeholder-img" width="100%" height="100%" src="images/alexey-starki-91ykdj2WQeg-unsplash (1).jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#777" />
+          <img class='img-fluid' width="100%" height="100%" src="images/alexey-starki-91ykdj2WQeg-unsplash (1).jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+            
 </img>
           <div class="container">
             <div class="carousel-caption text-end">
@@ -65,21 +65,31 @@ require 'getAirport.php';
   <?php
   if (!empty($_SESSION['result'])) {
   ?>
-    <div style="height:500px; margin-top:50px; margin-bottom:200px">
+     
+     <h1 class="text-center">Airports available</h1>
+    <div style="height:500px; margin-top:50px; margin-bottom: 400px">
       <?php
       for ($i = 0; $i <= (sizeof($_SESSION['result']) - 1); $i++) { ?>
 
-        <div class="card" style="width: 22rem; float:left; margin:1%;">
+        <div class="card" style="width: 30%; float:left; margin:1%;">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <h5 class="card-title"><?php print_r($_SESSION['result'][$i]['name']) ?></h5>
             <p class="card-text"> 
               <?php
               print_r( 'Iata Code: '. $_SESSION['result'][$i]['iata_code'].'<br>'.'Name: '. $_SESSION['result'][$i]['name'].'<br>'.'City: '.$_SESSION['result'][$i]['city'].'<br>'.'Country: '.$_SESSION['result'][$i]['country'].'<br>'.'<br>');
-             ?>
+             
+            ?>
               </p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+
+              <?php if(isUserLoggedIn()) { ?>
+            <a href="flights.php" class="card-link">Flight</a>
+               <?php
+              } else { ?>
+             <a href="register.php" class="card-link">Flight</a>
+
+             <?php } ?>
+              
+
           </div>
         </div>
     <?php

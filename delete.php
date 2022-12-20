@@ -13,7 +13,7 @@ $result = $stm->get_result();
 
 if ($result == $stm->get_result()) {
     session_destroy();
-    header('Location: option.php');
+    header('Location: index.php');
  
    
 } else {

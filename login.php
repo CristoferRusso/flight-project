@@ -22,7 +22,9 @@ require 'header.php';
 
 
 
+
 <main class="form-signin w-100 m-auto">
+<img class='img-fluid'width="100%" height="100%" style="margin-bottom: 100px; border-radius: 10px" src="images//alexey-starki-91ykdj2WQeg-unsplash (1).jpg"></img>
 
 <?php
         if (!empty($_SESSION['errors'])) {  ?>
@@ -33,7 +35,7 @@ require 'header.php';
         
           $_SESSION['errors'] = '';
         } else if (isUserLoggedIn()) { ?>
-          <div class="alert alert-success" style=" width: 100%; padding:30px;"> <?= $_SESSION['messageLogin'] ?></div>
+          <div class="alert alert-success" style=" width: 100%; padding:30px;"> <?= $_SESSION['messageLogin'].$users->get_name() ?></div>
         <?php
           $_SESSION['errors'] = '';
         } ?>
@@ -41,7 +43,6 @@ require 'header.php';
 
 
     <form class='form' method="POST" action="login_logic.php">
-    <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
         <h1 class="h3 mb-3 fw-normal">Please Login</h1>
 
         <div class="form-floating">

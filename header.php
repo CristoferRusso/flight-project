@@ -1,4 +1,5 @@
 <?php require 'functions.php';
+      require 'users.php';
 ?>
 
 
@@ -25,10 +26,6 @@
     <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
     <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
     <meta name="theme-color" content="#712cf9">
-
-
-
-
 
 
 </head>
@@ -64,11 +61,16 @@
                             <li class="nav-item">
                             <a class="nav-link" href="option.php">Options</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="getAirport.php">link</a>
-                        </li>
+                       
                       <?php } ?>
                         </ul>
+                     
+                        <?php if (isUserLoggedIn()) { ?>
+                        <h6 style="margin-right: 10px;"><?php  print_r($users->get_name()) ?><br><?php print_r($users->get_surname()) ?></h6>
+
+                        <?php } 
+                        
+                        ?>
                     <form class="d-flex" role="search" action="index.php" >
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="city" id="city">
                         <button class="btn btn-outline-success" type="submit">Search</button>
@@ -77,3 +79,6 @@
             </div>
         </nav>
     </header>
+
+
+
