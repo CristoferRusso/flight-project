@@ -8,7 +8,7 @@ class users
     public $surname;
     public $age;
     public $email;
-
+    public $user_id;
 
 
     function welcome()
@@ -58,6 +58,17 @@ class users
     {
         $this->surname = $surname;
     }
+    function set_user_id($user_id)
+    {
+        $this->user_id = $user_id;
+    }
+
+    function get_user_id()
+    {
+        return $this->user_id;
+    }
+
+
 }
 
 if (!empty($_SESSION['user_email'])) {
@@ -68,6 +79,9 @@ if (!empty($_SESSION['user_email'])) {
     };
     if (!empty($_SESSION['surname'])) {
         $users->set_surname($_SESSION['surname']);
+    };
+    if (!empty($_SESSION['user_id'])) {
+        $users->set_user_id($_SESSION['user_id']);
     };
 } else {
     $users = null;

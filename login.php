@@ -1,9 +1,9 @@
-<?php 
+<?php
 session_start();
 require 'db.php';
 require 'header.php';
 
-    
+
 ?>
 
 
@@ -16,48 +16,63 @@ require 'header.php';
 <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
 <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
 <meta name="theme-color" content="#712cf9">
-<link href="style/loginStyle.css" rel="stylesheet">
-<link href="style/style1.css" rel="stylesheet">
 
 
 
 
+<body >
+  
+<div style="background-color:blueviolet; width: 100%;  height:1000px " >
 
-<main class="form-signin w-100 m-auto">
-<img class='img-fluid'width="100%" height="100%" style="margin-bottom: 100px; border-radius: 10px" src="images//alexey-starki-91ykdj2WQeg-unsplash (1).jpg"></img>
+<main class="m-auto" style="background-color:blueviolet; width: 100%;  height:100% " >
+
+  <?php
+  if (!empty($_SESSION['errors'])) {  ?>
+
+    <div class="alert alert-danger" style=" width: 100%; padding:30px; "> <?= $_SESSION['errors'] ?></div>
+
+  <?php
+
+    $_SESSION['errors'] = '';
+  } else if (isUserLoggedIn()) { ?>
+    <div class="alert alert-success" style=" width: 100%; padding:30px;"> <?= $_SESSION['messageLogin'] . $users->get_name() ?></div>
+  <?php
+    $_SESSION['errors'] = '';
+  } ?>
+
+
+
+
+<section class="ftco-section" >
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-16">
+          <div class="row no-gutters">
+            <div class="col-md-16">
+              <div class="contact-wrap w-100 p-lg-5 p-4" style="box-shadow: 0 0 16px black">
+              <form class='form' method="POST" action="login_logic.php">
+                    <h1 class="h3 mb-3 fw-normal">Please Login</h1>
+                    <div class="form-floating">
+                      <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                    </div>
+                    <div class="form-floating">
+                      <input type="password" class="form-control" id="password" name="password" placeholder="Password" style="color: black;">
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit" style="margin-top: 10px;">Login</button>
+                  </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
 
 <?php
-        if (!empty($_SESSION['errors'])) {  ?>
 
-          <div class="alert alert-danger" style=" width: 100%; padding:30px; "> <?= $_SESSION['errors'] ?></div>
+require 'footer.php'
+?>
 
-        <?php
-        
-          $_SESSION['errors'] = '';
-        } else if (isUserLoggedIn()) { ?>
-          <div class="alert alert-success" style=" width: 100%; padding:30px;"> <?= $_SESSION['messageLogin'].$users->get_name() ?></div>
-        <?php
-          $_SESSION['errors'] = '';
-        } ?>
-
-
-
-    <form class='form' method="POST" action="login_logic.php">
-        <h1 class="h3 mb-3 fw-normal">Please Login</h1>
-
-        <div class="form-floating">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
-        </div>
-        <div class="form-floating">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-        </div>
-        
-      
-
-
-        <button class="w-100 btn btn-lg btn-primary" type="submit"  style="margin-top: 10px;">Login</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
-    </form>
 </main>
+</body>

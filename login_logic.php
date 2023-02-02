@@ -16,7 +16,7 @@ if (empty($_POST['password'])) {
 }
 
 
-$sql = "SELECT email,password,name,surname FROM users WHERE email =?";
+$sql = "SELECT id,email,password,name,surname FROM users WHERE email =?";
 $stm = $link->prepare($sql);
 $stm->bind_param('s', ($_POST['email']));
 $res = $stm->execute();
@@ -35,6 +35,7 @@ if ($res && $result->num_rows) {
         $_SESSION['user_email'] = $_POST['email'];
         $_SESSION['name'] = $row['name'];
         $_SESSION['surname'] = $row['surname'];
+        $_SESSION['user_id'] = $row['id'];
         
       
     } else {
