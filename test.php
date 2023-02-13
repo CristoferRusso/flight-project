@@ -30,4 +30,3 @@ require 'header.php';
    
  })
 
-</script>

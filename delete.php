@@ -1,3 +1,4 @@
+
 <?php
 require 'db.php';
 require 'functions.php';
@@ -21,6 +22,5 @@ if ($result == $stm->get_result()) {
     header('Location: option.php');
  
 }
-
 
 

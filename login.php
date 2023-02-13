@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 require 'db.php';
@@ -20,7 +21,7 @@ require 'header.php';
 
 
 
-<body >
+<body>
   
 <div style="background-color:blueviolet; width: 100%;  height:1000px " >
 
@@ -77,4 +78,5 @@ require 'footer.php'
 ?>
 
 </main>
+
 </body>

@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -13,4 +14,5 @@ function isUserLoggedIn() {
 function logout () {
     session_destroy();
 }
+
 

@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -64,4 +65,5 @@ require 'header.php';
 
   })
 </script>
-</main
+
+</main>

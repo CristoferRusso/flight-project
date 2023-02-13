@@ -1,3 +1,4 @@
+
 <?php 
 require 'functions.php';
 require 'users.php';
@@ -88,4 +89,3 @@ require 'users.php';
                 </div>
             </div>
         </nav>
-    </header>

@@ -1,3 +1,4 @@
+
     <!-- FOOTER -->
     <footer class="text-center text-lg-start bg-dark text-muted">
       <!-- Section: Social media -->
@@ -116,4 +117,3 @@
         <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
       </div>
       <!-- Copyright -->
-    </footer>
