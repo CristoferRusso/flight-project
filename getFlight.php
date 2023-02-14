@@ -24,6 +24,7 @@ $err = curl_error($curl);
 
 curl_close($curl);
 $_SESSION['resultFlight'] = json_decode($response, true);
+
 if ($err) {
 	echo "cURL Error #:" . $err;
 } else {

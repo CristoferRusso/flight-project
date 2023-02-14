@@ -81,6 +81,7 @@ require 'users.php';
 
                     <?php if (isUserLoggedIn()) { ?>
                         <h6 style="margin-right: 10px;"><?php print_r($users->get_name()) ?><br><?php print_r($users->get_surname()) ?></h6>
+                         
 
                     <?php }
 

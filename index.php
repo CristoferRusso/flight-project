@@ -2,7 +2,7 @@
 <?php
 session_start();
 require 'header.php';
-//require 'getAirport.php';
+require 'getAirport.php';
 error_reporting(E_ERROR | E_PARSE);
 if (isUserLoggedIn()) {
   if (empty($_SESSION['iata_code_origin'])) {
@@ -19,7 +19,8 @@ if (isUserLoggedIn()) {
 <main>
 
 
-  <?php if (isUserLoggedIn()) { ?>
+  <?php if (isUserLoggedIn()) {
+    ?>
 
     <section class="ftco-section">
       <div class="container">
@@ -43,10 +44,6 @@ if (isUserLoggedIn()) {
       </div>
       </div>
     </section>
-
-
-
-
   <?php } else { ?>
     <div id="carouselExampleFade" class="carousel slide">
       <div class="carousel-inner">
@@ -60,12 +57,11 @@ if (isUserLoggedIn()) {
         </div>
       </div>
 
-
-
-
       <?php
     }
     if (isUserLoggedIn()) {
+   
+
       if (empty($_SESSION['iata_code_origin'])) {
         if (!empty($_SESSION['result'])) {
 
@@ -92,7 +88,7 @@ if (isUserLoggedIn()) {
                               <form method="POST" action="index.php">
                                 <input hidden value=" <?= $_SESSION['result'][$i]['iata_code'] ?> " name="iata_code_origin" id="iata_code_origin">
                                 <input hidden value=" <?= $_SESSION['result'][$i]['name'] ?> " name="selected_origin" id="selected_origin">
-                                <button class="btn btn-lg btn-primary">Flight</button>
+                                <button class="btn btn-lg btn-primary">Select</button>
                               </form>
                               </p>
                             </div>
@@ -137,7 +133,7 @@ if (isUserLoggedIn()) {
                           <form method="POST" action="flights.php">
                             <input hidden value=" <?= $_SESSION['destination'][$i]['iata_code'] ?> " name="iata_code_destination">
                             <input hidden value=" <?= $_SESSION['destination'][$i]['name'] ?> " name="selected_destination">
-                            <button class="btn btn-lg btn-primary">Flight</button>
+                            <button class="btn btn-lg btn-primary">Select</button>
                           </form>
                           </p>
                         </div>
