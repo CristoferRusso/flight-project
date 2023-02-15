@@ -3,6 +3,7 @@ session_start();
 require 'header.php';
 $int =(int)$_GET['price'];
 ?>
+<div style="background-color:blueviolet; width: 100%;  height:1000px " >
 
 <section class="ftco-section">
   <div class="container">
@@ -12,12 +13,11 @@ $int =(int)$_GET['price'];
           <div class="col-md-16">
             <div class="contact-wrap w-100 p-lg-5 p-4" style="box-shadow: 0 0 16px black">
               <div id="smart-button-container">
-                <div style="text-align: center"><label for="description"> </label><input type="text" hidden name="descriptionInput" id="description" maxlength="127" value="<?= $_GET['origin'] . "-" . $_GET['destination'] ?>"><?= $_GET['origin'] . "-" . $_GET['destination'] ?></div>
-                <p id="descriptionError" style="visibility: hidden; color:red; text-align: center;">Please enter a description</p>
-                <div style="text-align: center"><label for="amount"> </label><input name="amountInput" hidden type="number" id="amount" value='<?= $int?>'><span><?= $_GET['price'] ?></span></div>
-                <p id="priceLabelError" style="visibility: hidden; color:red; text-align: center;">Please enter a price</p>
+              <img src="images/paper-plane.png" alt="" width="50px" height="50px" style="float: right;">
+                <div style="text-align: center"><label for="description"> </label><input type="text" hidden name="descriptionInput" id="description" maxlength="127" value="<?= $_GET['origin'] . "-" . $_GET['destination'] ?>"><h4><?= $_GET['origin'] . "-" . $_GET['destination'] ?></h4></div>
+                <h4 style="text-align: center"><?= "Passengers :" . $_GET['passengers'] ?></h4>
+                <div style="text-align: center"><label for="amount"> </label><input name="amountInput" hidden type="number" id="amount" value='<?= $int?>'><h4><?= $_GET['price'] ?></h4></div>
                 <div id="invoiceidDiv" style="text-align: center; display: none;"><label for="invoiceid"> </label><input name="invoiceid" maxlength="127" type="text" id="invoiceid" value=""></div>
-                <p id="invoiceidError" style="visibility: hidden; color:red; text-align: center;">Please enter an Invoice ID</p>
                 <div style="text-align: center; margin-top: 0.625rem;" id="paypal-button-container"></div>
               </div>
               </div>

@@ -28,8 +28,9 @@ if (empty($_SESSION['selected_destination'])) {
             <div class="row no-gutters">
               <div class="col-md-16">
                 <div class="contact-wrap w-100 p-lg-5 p-4" style="box-shadow: 0 0 16px black">
-                  <h1 class='colortitle'>Check your flight</h1>
-                  <h3> Departure from <?php print_r($_SESSION['selected_origin']) . "<br>" ?>
+                <img src="images/paper-plane.png" alt="" width="50px" height="50px" style="float: right;">
+                  <h1 id="title">CHECK YOUR FLIGHT</h1>
+                  <h3 > Departure from <?php print_r($_SESSION['selected_origin']) . "<br>" ?>
                     <h3> Destination <?php print_r($_SESSION['selected_destination']) . "<br>" ?>
                       <div class="card-body">
                         <form style="width: 300px;" action="flights.php">
@@ -68,7 +69,7 @@ if (!empty($_SESSION['resultFlight'])) {
         <div class="row no-gutters">
           <div class="col-md-16">
             <div class="contact-wrap w-100 p-lg-5 p-4" style="box-shadow: 0 0 16px black">
-              <h1 class="text-center">Flights</h1>
+              <h1 class="text-center" id="title">FLIGHTS</h1>
               <div style="height:500px; margin-top:50px; margin-bottom: 400px">
                 <?php
                 for ($i = 0; $i <= (sizeof($_SESSION['resultFlight']['itineraries']['buckets']) - 1); $i++) {
@@ -89,6 +90,7 @@ if (!empty($_SESSION['resultFlight'])) {
                           <input hidden  value="<?= $_SESSION['resultFlight']['itineraries']['buckets'][$i]['items'][0]['price']['formatted']?>" name="price">
                           <input hidden  value="<?= $_SESSION['selected_origin']?>" name="origin">
                           <input hidden  value="<?= $_SESSION['selected_destination']?>" name="destination">
+                          <input hidden  value="<?= $_GET['passengers']?>" name="passengers">
                           <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif"  name="submit" alt="PayPal - The safer, easier way to pay online!">
                           <img alt="" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
                         </form>

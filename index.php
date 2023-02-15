@@ -22,14 +22,15 @@ if (isUserLoggedIn()) {
   <?php if (isUserLoggedIn()) {
     ?>
 
-    <section class="ftco-section">
-      <div class="container">
+    <section class="ftco-section" style="  background-image: url('images/plane.jpg');">
+      <div class="container" >
         <div class="row justify-content-center">
           <div class="col-md-16">
             <div class="row no-gutters">
               <div class="col-md-16">
-                <div class="contact-wrap w-100 p-lg-5 p-4" style="box-shadow: 0 0 16px black">
-                <h2 class="fw-normal">Heading</h2>
+                <div  style="box-shadow: 0 0 16px black" class="contact-wrap w-100 p-lg-5 p-4">
+                <h1 id="title">CHECK YOUR FLIGHTS</h1>
+                <h6 id='title'>Insert origin and destination</h6>
                   <form class="d-flex" role="search" action="index.php">
                     <title>Placeholder</title>
                     <input class="form-control me-2" type="search" placeholder="Destination" aria-label="Search" name="destination">
@@ -74,7 +75,7 @@ if (isUserLoggedIn()) {
                     <div class="contact-wrap w-100 p-lg-5 p-4" style="box-shadow: 0 0 16px black">
 
                       <div style="height:500px; margin-top:50px; margin-bottom: 400px">
-                        <h1 style="font-family:Arial, Helvetica, sans-serif;   background: -webkit-linear-gradient(rgb(255, 99, 255), blue);   -webkit-background-clip: text;   -webkit-text-fill-color: transparent;">AIRPORTS AVAILABLE ORIGIN</h1>
+                        <h1 id="title">AIRPORTS AVAILABLE ORIGIN</h1>
                         <?php
                         for ($i = 0; $i <= (sizeof($_SESSION['result']) - 1); $i++) {
                         ?>
@@ -119,7 +120,7 @@ if (isUserLoggedIn()) {
               <div class="col-md-16">
                 <div class="contact-wrap w-100 p-lg-5 p-4" style="box-shadow: 0 0 16px black">
                   <div style="height:500px; margin-top:50px; margin-bottom: 400px">
-                    <h1 style="font-family:Arial, Helvetica, sans-serif;   background: -webkit-linear-gradient(rgb(255, 99, 255), blue);   -webkit-background-clip: text;   -webkit-text-fill-color: transparent;">AIRPORTS AVAILABLE DESTINATION</h1>
+                    <h1 id="title">AIRPORTS AVAILABLE DESTINATION</h1>
                     <?php
                     for ($i = 0; $i <= (sizeof($_SESSION['destination']) - 1); $i++) {
                     ?>

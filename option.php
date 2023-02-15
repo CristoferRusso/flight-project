@@ -28,7 +28,7 @@ require 'header.php';
                     }  ?>
                     <?php
                     if (isUserLoggedIn()) { ?>
-                
+                        <img src="images/paper-plane.png" alt="" width="50px" height="50px" style="float: right;">
                         <h5 >Your account</h5>
                         <div class="card-body">
                           <h5 class="card-title"><?php print_r($users->get_name()) ?><br><?php print_r($users->get_surname()) ?></h5>

@@ -29,7 +29,8 @@ require 'header.php';
               <div class="contact-wrap w-100 p-lg-5 p-4" style="box-shadow: 0 0 16px black">
 
               <form class='form' method="POST" action="update.php">
-                  <h3>Update</h3>
+              <img src="images/paper-plane.png" alt="" width="50px" height="50px" style="float: right;">
+                  <h3>Update your account</h3>
                   <div class="form-floating">
                     <input type="email" class="form-control" name="new_email" id="new_email" placeholder="New email">
                   </div>

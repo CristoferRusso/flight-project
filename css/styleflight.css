@@ -8329,3 +8329,11 @@ textarea.form-control {
   font-size: 16px;
   font-weight: 500;
   color: #28a745; }
+
+#title{
+
+  font-family:Arial, Helvetica, sans-serif;  
+  background: -webkit-linear-gradient(rgb(0, 102, 255), blue);  
+  -webkit-background-clip: text;   
+  -webkit-text-fill-color: transparent;
+}
