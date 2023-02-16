@@ -91,6 +91,9 @@ if (!empty($_SESSION['resultFlight'])) {
                           <input hidden  value="<?= $_SESSION['selected_origin']?>" name="origin">
                           <input hidden  value="<?= $_SESSION['selected_destination']?>" name="destination">
                           <input hidden  value="<?= $_GET['passengers']?>" name="passengers">
+                          <input hidden  value="<?php print_r($_SESSION['resultFlight']['itineraries']['buckets'][$i]['items'][0]['legs'][0]['durationInMinutes']) ?>" name="duration">
+                          <input hidden  value="<?php print_r($_SESSION['resultFlight']['itineraries']['buckets'][$i]['items'][0]['legs'][0]['departure']) ?>" name="departure">
+                          <input hidden  value="<?php print_r($_SESSION['resultFlight']['itineraries']['buckets'][$i]['items'][0]['legs'][0]['arrival']) ?>" name="arrival">
                           <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif"  name="submit" alt="PayPal - The safer, easier way to pay online!">
                           <img alt="" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
                         </form>

@@ -6,7 +6,6 @@ class users
 
     public $name;
     public $surname;
-    public $age;
     public $email;
     public $user_id;
 
@@ -31,15 +30,6 @@ class users
         return $this->email ?? '';
     }
 
-    function set_age($age)
-    {
-        $this->age = $age;
-    }
-
-    function get_age()
-    {
-        return $this->age;
-    }
     function get_name()
     {
         return $this->name;

@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 require 'db.php';
@@ -22,61 +21,61 @@ require 'header.php';
 
 
 <body>
-  
-<div style="background-color:blueviolet; width: 100%;  height:1000px " >
 
-<main class="m-auto" style="background-color:blueviolet; width: 100%;  height:100% " >
+  <div style="background-color:blueviolet; width: 100%;  height:1000px ">
 
-  <?php
-  if (!empty($_SESSION['errors'])) {  ?>
+    <main class="m-auto" style="background-color:blueviolet; width: 100%;  height:100% ">
 
-    <div class="alert alert-danger" style=" width: 100%; padding:30px; "> <?= $_SESSION['errors'] ?></div>
+      <?php
+      if (!empty($_SESSION['errors'])) {  ?>
 
-  <?php
+        <div class="alert alert-danger" style=" width: 100%; padding:30px; "> <?= $_SESSION['errors'] ?></div>
 
-    $_SESSION['errors'] = '';
-  } else if (isUserLoggedIn()) { ?>
-    <div class="alert alert-success" style=" width: 100%; padding:30px;"> <?= $_SESSION['messageLogin'] . $users->get_name() ?></div>
-  <?php
-    $_SESSION['errors'] = '';
-  } ?>
+      <?php
 
-
+        $_SESSION['errors'] = '';
+      } else if (isUserLoggedIn()) { ?>
+        <div class="alert alert-success" style=" width: 100%; padding:30px;"> <?= $_SESSION['messageLogin'] . $users->get_name() ?></div>
+      <?php
+        $_SESSION['errors'] = '';
+      } ?>
 
 
-<section class="ftco-section" >
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-16">
-          <div class="row no-gutters">
+
+
+      <section class="ftco-section">
+        <div class="container">
+          <div class="row justify-content-center">
             <div class="col-md-16">
-              <div class="contact-wrap w-100 p-lg-5 p-4" style="box-shadow: 0 0 16px black">
-              <form class='form' method="POST" action="login_logic.php">
-              <img src="images/paper-plane.png" alt="" width="50px" height="50px" style="float: right;">
-                    <h1 style=" float: right; font-family:Arial, Helvetica, sans-serif;   background: -webkit-linear-gradient(rgb(255, 99, 255), blue);   -webkit-background-clip: text;   -webkit-text-fill-color: transparent; ">VolaConTe</h1>
-                    <h3 class="h3 mb-3 fw-normal">Please Login</h3>
-                    <div class="form-floating">
-                      <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
-                    </div>
-                    <div class="form-floating">
-                      <input type="password" class="form-control" id="password" name="password" placeholder="Password" style="color: black;">
-                    </div>
-                    <button class="w-100 btn btn-lg btn-primary" type="submit" style="margin-top: 10px;">Login</button>
-                  </form>
+              <div class="row no-gutters">
+                <div class="col-md-16">
+                  <div class="contact-wrap w-100 p-lg-5 p-4" style="box-shadow: 0 0 16px black">
+                    <form class='form' method="POST" action="login_logic.php">
+                      <img src="images/paper-plane.png" alt="" width="50px" height="50px" style="float: right;">
+                      <h1 style=" float: right; font-family:Arial, Helvetica, sans-serif;   background: -webkit-linear-gradient(rgb(255, 99, 255), blue);   -webkit-background-clip: text;   -webkit-text-fill-color: transparent; ">VolaConTe</h1>
+                      <h3 class="h3 mb-3 fw-normal">Please Login</h3>
+                      <div class="form-floating">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                      </div>
+                      <div class="form-floating">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" style="color: black;">
+                      </div>
+                      <button class="w-100 btn btn-lg btn-primary" type="submit" style="margin-top: 10px;">Login</button>
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    </div>
+  </div>
   </section>
 
-<?php
+  <?php
 
-require 'footer.php'
-?>
+  require 'footer.php'
+  ?>
 
-</main>
+  </main>
 
 </body>

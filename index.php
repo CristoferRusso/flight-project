@@ -18,7 +18,6 @@ if (isUserLoggedIn()) {
 
 <main>
 
-
   <?php if (isUserLoggedIn()) {
     ?>
 

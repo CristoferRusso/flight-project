@@ -4,11 +4,7 @@ session_start();
 require 'db.php';
 require 'header.php';
 
-
-
 ?>
-
-
 <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
 <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -51,7 +47,7 @@ require 'header.php';
                 <form class='form' method="POST" action="register_logic.php">
                  <img src="images/paper-plane.png" alt="" width="50px" height="50px" style="float: right;">
                  <h1 style=" float: right; font-family:Arial, Helvetica, sans-serif;   background: -webkit-linear-gradient(rgb(255, 99, 255), blue);   -webkit-background-clip: text;   -webkit-text-fill-color: transparent; ">VolaConTe</h1>
-                  <h3>Register to view and book our flights</h3>
+                  <h3 id="title">SIGNUP</h3>
                   <div class="form-floating">
                     <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
                   </div>

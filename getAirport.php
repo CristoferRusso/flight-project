@@ -15,7 +15,7 @@ curl_setopt_array($curl, [
 	CURLOPT_CUSTOMREQUEST => "GET",
 	CURLOPT_HTTPHEADER => [
 		"X-RapidAPI-Host: skyscanner44.p.rapidapi.com",
-		"X-RapidAPI-Key:283da6760amsh7196cff062d99c7p125bdejsn2a096b4d01f5"
+		"X-RapidAPI-Key:6c76818edemshcc68cce329d5588p165e05jsnaffa088aba07"
 	],
 ]);
 
@@ -45,7 +45,7 @@ if (!empty($_GET['destination'])) {
 		CURLOPT_CUSTOMREQUEST => "GET",
 		CURLOPT_HTTPHEADER => [
 			"X-RapidAPI-Host: skyscanner44.p.rapidapi.com",
-			"X-RapidAPI-Key: 283da6760amsh7196cff062d99c7p125bdejsn2a096b4d01f5"
+			"X-RapidAPI-Key: 6c76818edemshcc68cce329d5588p165e05jsnaffa088aba07"
 		],
 	]);
 	
