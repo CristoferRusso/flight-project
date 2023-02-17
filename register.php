@@ -63,8 +63,6 @@ require 'header.php';
                   <button class="w-100 btn btn-lg btn-primary" type="submit" style="margin-top: 10px;">Sign in</button>
                   <h6 style="margin-top: 60px;">If you are already registered log in</h6>
                   <a href="login.php" class="btn btn-lg btn-primary">Login</a>
-
-                  <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
                 </form>
               </div>
             </div>

@@ -1,6 +1,6 @@
 
     <!-- FOOTER -->
-    <footer class="text-center text-lg-start bg-dark text-muted">
+    <footer class="text-center text-lg-start bg-dark text-muted " style="position:absolute; width:100%;">
       <!-- Section: Social media -->
       <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <!-- Left -->
@@ -42,6 +42,8 @@
               <!-- Content -->
               <h6 class="text-uppercase fw-bold mb-4">
                 <i class="fas fa-gem me-3"></i>VolaConTe
+                <img src="images/paper-plane.png" alt="" width="50px" height="50px">
+
               </h6>
               <p>
                 Here you can use rows and columns to organize your footer content. Lorem ipsum

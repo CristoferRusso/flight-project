@@ -1,8 +1,7 @@
-
 <?php
 session_start();
 require 'header.php';
-require 'getAirport.php';
+//require 'getAirport.php';
 error_reporting(E_ERROR | E_PARSE);
 if (isUserLoggedIn()) {
   if (empty($_SESSION['iata_code_origin'])) {
@@ -19,17 +18,17 @@ if (isUserLoggedIn()) {
 <main>
 
   <?php if (isUserLoggedIn()) {
-    ?>
+  ?>
 
     <section class="ftco-section" style="  background-image: url('images/plane.jpg');">
-      <div class="container" >
+      <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-16">
             <div class="row no-gutters">
               <div class="col-md-16">
-                <div  style="box-shadow: 0 0 16px black" class="contact-wrap w-100 p-lg-5 p-4">
-                <h1 id="title">CHECK YOUR FLIGHTS</h1>
-                <h6 id='title'>Insert origin and destination</h6>
+                <div style="box-shadow: 0 0 16px black" class="contact-wrap w-100 p-lg-5 p-4">
+                  <h1 id="title">CHECK YOUR FLIGHTS</h1>
+                  <h6 id='title'>Insert origin and destination</h6>
                   <form class="d-flex" role="search" action="index.php">
                     <title>Placeholder</title>
                     <input class="form-control me-2" type="search" placeholder="Destination" aria-label="Search" name="destination">
@@ -49,9 +48,10 @@ if (isUserLoggedIn()) {
       <div class="carousel-inner">
         <div class="col-md-16">
           <div class="carousel-item active">
-            <img src="images/alexey-starki-91ykdj2WQeg-unsplash (1).jpg" class="d-block w-100" alt="...">
+            <img src="images/philip-myrtorp-iiqpxCg2GD4-unsplash.jpg"  class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="100%" height="100%" >
             <div class="carousel-caption d-none d-md-block">
-              <a class="w-100 btn btn-lg btn-primary" type="submit" href='register.php' style="margin-top: 10px;">Signup to take your flights</a>
+              <a class=" btn btn-lg btn-primary" type="submit" href='register.php' style="margin-top: 10px;">SIGNUP TO TAKE YOUR FLIGHT <img src="images/paper-plane.png" alt="" width="30px" height="30px">
+              </a>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@ if (isUserLoggedIn()) {
       <?php
     }
     if (isUserLoggedIn()) {
-   
+
 
       if (empty($_SESSION['iata_code_origin'])) {
         if (!empty($_SESSION['result'])) {
@@ -207,7 +207,7 @@ if (isUserLoggedIn()) {
             <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
           </div>
           <div class="col-md-5 order-md-1">
-            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="images/gif.gif" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="images/gif.gif" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" >
             <title>Placeholder</title>
             </svg>
 
@@ -356,7 +356,7 @@ if (isUserLoggedIn()) {
     document.getElementById('img1').src = 'images/paper-plane.png'
   })
   document.getElementById('img1').addEventListener('mouseout', function() {
-    document.getElementById('img1').src = 'images/alexey-starki-91ykdj2WQeg-unsplash (1).jpg'
+    document.getElementById('img1').src = 'images/plane.jpg'
   })
 
   document.getElementById('img2').addEventListener('mouseover', function() {
@@ -379,5 +379,5 @@ if (isUserLoggedIn()) {
     alert()
   })
 </script>
-</html>
 
+</html>

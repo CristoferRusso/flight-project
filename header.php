@@ -1,5 +1,4 @@
-
-<?php 
+<?php
 require 'functions.php';
 require 'users.php';
 ?>
@@ -49,7 +48,7 @@ require 'users.php';
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                       <li class="nav-item">
+                        <li class="nav-item">
                             <img src="images/paper-plane.png" alt="" width="50px" height="50px">
                         </li>
                         <li class="nav-item">
@@ -81,12 +80,12 @@ require 'users.php';
 
                     <?php if (isUserLoggedIn()) { ?>
                         <h6 style="margin-right: 10px;"><?php print_r($users->get_name()) ?><br><?php print_r($users->get_surname()) ?></h6>
-                         
+
 
                     <?php }
 
                     ?>
-                    
+
                 </div>
             </div>
         </nav>

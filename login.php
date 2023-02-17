@@ -53,7 +53,7 @@ require 'header.php';
                     <form class='form' method="POST" action="login_logic.php">
                       <img src="images/paper-plane.png" alt="" width="50px" height="50px" style="float: right;">
                       <h1 style=" float: right; font-family:Arial, Helvetica, sans-serif;   background: -webkit-linear-gradient(rgb(255, 99, 255), blue);   -webkit-background-clip: text;   -webkit-text-fill-color: transparent; ">VolaConTe</h1>
-                      <h3 class="h3 mb-3 fw-normal">Please Login</h3>
+                      <h3 id="title">LOGIN</h3>
                       <div class="form-floating">
                         <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
                       </div>
