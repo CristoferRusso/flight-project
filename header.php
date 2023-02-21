@@ -53,6 +53,8 @@ require 'users.php';
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                            <div id="time"></div>
+
                         </li>
 
                         <?php if (!isUserLoggedIn()) {  ?>

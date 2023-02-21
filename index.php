@@ -158,6 +158,8 @@ if (isUserLoggedIn()) {
       <div class="container marketing">
 
         <!-- Three columns of text below the carousel -->
+        <div id="root"></div>
+        <div id="react_test"></div>
         <div class="row">
           <div class="col-lg-4">
             <img id='img1' class="bd-placeholder-img rounded-circle" width="140" height="140" src="https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -345,7 +347,9 @@ if (isUserLoggedIn()) {
 
 
 <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="react/react_test.js"></script>
 
 
 </body>
@@ -378,6 +382,8 @@ if (isUserLoggedIn()) {
     const ele = $(evt.target.value);
     alert()
   })
+
+
 </script>
 
 </html>
