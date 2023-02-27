@@ -1,7 +1,7 @@
 <?php
 session_start();
 require 'header.php';
-//require 'getAirport.php';
+require 'getAirport.php';
 error_reporting(E_ERROR | E_PARSE);
 if (isUserLoggedIn()) {
   if (empty($_SESSION['iata_code_origin'])) {
@@ -16,7 +16,7 @@ if (isUserLoggedIn()) {
 
 
 <main>
-
+   
   <?php if (isUserLoggedIn()) {
   ?>
 
@@ -158,8 +158,8 @@ if (isUserLoggedIn()) {
       <div class="container marketing">
 
         <!-- Three columns of text below the carousel -->
-        <div id="root"></div>
-        <div id="react_test"></div>
+        <hr class="featurette-divider ">
+
         <div class="row">
           <div class="col-lg-4">
             <img id='img1' class="bd-placeholder-img rounded-circle" width="140" height="140" src="https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -167,6 +167,8 @@ if (isUserLoggedIn()) {
             </img>
             <h2 class="fw-normal">Heading</h2>
             <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+            <div class="btn btn-lg btn-primary" id="like_button_container"></div>
+
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <img id='img2' class="bd-placeholder-img rounded-circle" width="140" height="140" src="https://images.unsplash.com/photo-1606768666853-403c90a981ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -174,13 +176,17 @@ if (isUserLoggedIn()) {
             </img>
             <h2 class="fw-normal">Heading</h2>
             <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+            <div class="btn btn-lg btn-primary" id="like_button_container1"></div>
+
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <img id='img3' class="bd-placeholder-img rounded-circle" width="140" height="140" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
             <title>Placeholder</title>
             </img>
             <h2 class="fw-normal">Heading</h2>
-            <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+            <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>        
+            <div class="btn btn-lg btn-primary" id="like_button_container2"></div>
+
           </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
 
@@ -330,6 +336,12 @@ if (isUserLoggedIn()) {
         </div>
       </section>
 
+      <script>
+
+
+
+      </script>
+
       <?php
       require 'footer.php'
       ?>
@@ -349,13 +361,15 @@ if (isUserLoggedIn()) {
 <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-<script src="react/react_test.js"></script>
+<script src="js/like_button.js"></script>
 
 
 </body>
 
 
 <script>
+
+
   document.getElementById('img1').addEventListener('mouseover', function() {
     document.getElementById('img1').src = 'images/paper-plane.png'
   })
@@ -382,6 +396,7 @@ if (isUserLoggedIn()) {
     const ele = $(evt.target.value);
     alert()
   })
+
 
 
 </script>

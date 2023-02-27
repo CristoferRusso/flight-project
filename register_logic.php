@@ -68,7 +68,17 @@ $stm->bind_param('ssss', $_POST['email'], $passHash, $_POST['name'], $_POST['sur
 $res = $stm->execute();
 
 if($res && $stm->affected_rows) {
-    header('Location: index.php');
+    $res = [
+        'data' => []   
+    ];
+
+    $link = dbConnect();
+    $sql = 'SELECT * FROM `users` INNER JOIN ticket on users.email = ticket.id WHERE users.email = "'.$_POST['email'].'"';
+    $stm = $link->prepare($sql);
+    $stm->execute();
+    $res['data'] =  $stm->fetchAll(PDO::FETCH_ASSOC);
+    $_SESSION['res'] =  $res['data'];
+    
     $_SESSION['messageRegistration'] = '<br> You can now access your platform <br>' ;
     $_SESSION['user_email'] = $_POST['email'];
     $_SESSION['name'] = $_POST['name'];
